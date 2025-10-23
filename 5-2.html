@@ -14,14 +14,17 @@
         html,body, div{
             border-color: red;
         }
+        .container{margin-top: 180px;}
         .box{
             /* Display: inline/block/inline-block */
             display: inline-block;
             width: 100px;
             height: 100px;
             /* Position: static/relative/absolute/fixed
+                Static: As propriedades top, left, right e bottom não funcionam para ele, todo elemento é position static, a menos que seja alterado. 
                 Relative: muda a posiçao relativa a posição estática
-                Absolute: Se posiciona ao primeiro ancestral não estático e se não tiver será em relação ao html*/
+                Absolute: Se posiciona ao primeiro ancestral não estático e se não tiver será em relação ao html
+                Medida porcentual é a medida em relação ao ancestral*/
             position: static;
         }
         #box2{
@@ -40,8 +43,9 @@
         #box4{
             /* deixa fixado em relação ao view port(área visível do navegador) */
             position: fixed;
-            right: 10px;
-            bottom: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background-color: rgb(235, 177, 177);
         }
     </style>
