@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            align-content: center;
+            height: 100vh;
+            animation: rotacao 6s linear infinite;
+        }
+        .box{
+            border-radius: 50%;
+            border: 20px solid #FAAABB;
+            background-color: #AAAAAA;
+            width: 100px;
+            height: 100px;
+            font-size: 3rem;
+            animation: rotacao 2s steps(67) infinite;
+        }
+        @keyframes rotacao{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        .box{
+            flex-shrink: 0;
+            border-top-color: rgb(0, 255, 0);
+            border-right-color: blue;
+            border-bottom-color: red;
+            border-left-color: yellow;
+        }
+        
+        
+    </style>
+
+</head>
+<body>
+    <div class="box" id="item1">1</div>
+    <div class="box" id="item2">2</div>
+    <div class="box" id="item3">3</div>
+    <div class="box" id="item4">4</div>
+    
+</body>
+</html>
