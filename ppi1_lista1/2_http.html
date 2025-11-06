@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2 - Explique o que é o protoclo HTTP</title>
+    <style>
+        .http{
+            border-radius: 1%;
+            border: 1px solid black;
+            padding: 15px;
+        }
+        table, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div class="http">
+        <h1>Protocolo HTTP</h1>
+        <h3>O que é?</h3>
+        <p>HTTP, ou <mark>Hypertext Transfer Protocol</mark> é um protocolo de comunicação utilizado para a transferência de informações na World Wide Web(WWW) e em outros sistemas de rede. Ele serve como a base para que um <strong>cliente</strong> e um <strong>servidor web</strong> troquem informações.</p>
+        <h3>Como é usado na WEB</h3>
+        <p>Esse protocolo HTTP é o motor da World Wide Web (Web) e é usado para permitir que o navegador acesse e visualize qualquer conteúdo de um servidor web. A sua utilização na Web se baseia em um modelo constante de <strong>Requisição-Resposta</strong> dentro da arquitetura Cliente-Servidor.</p>
+        <!--Falta imagem aqui-->
+        <div class="esquerda">
+            <h3>Campos da Requisição(Request) HTTP</h3>
+            <p>A Requisição é a mensagem que o cliente (navegador) envia ao servidor para solicitar um recurso na Web.</p>
+            <ol>
+                <li>Linha de Status: É a primeira linha e informa o resultado da requisição.</li>
+                <ul>
+                    <li>Inclui a Versão do HTTP e o Código de Status (um número de três dígitos).</li>
+                    <li>O código 200 OK indica que a requisição foi bem-sucedida, enquanto o código 404 Not Found indica que o recurso não foi localizado.</li>
+                </ul>
+                <li>Cabeçalhos (Headers): Fornecem metadados e informações sobre o cliente.</li>
+                <ul>
+                    <li>O campo Host é crucial, identificando o domínio do servidor de destino.</li>
+                    <li>O User-Agent informa o servidor sobre qual navegador (e sistema operacional) está fazendo a solicitação.</li>
+                    <li>O campo Accept indica os tipos de conteúdo que o cliente é capaz de processar (ex: HTML, imagens).</li>
+                </ul>
+                <li>Corpo (Body):</li>
+                <ul>
+                    <li>Geralmente fica vazio em requisições GET.</li>
+                    <li>É preenchido com o payload (dados do formulário, login, etc.) nas requisições POST.</li>
+                </ul>
+            </ol>
+            <h3>Campos da Resposta (Response) HTTP</h3>
+            <p>A Resposta é a mensagem que o servidor envia de volta, fornecendo o resultado da solicitação do cliente.</p>
+            <ol>
+                <li>Linha de Status: É a primeira linha e informa o resultado da requisição.</li>
+                <ul>
+                    <li>Inclui a Versão do HTTP e o Código de Status (um número de três dígitos).</li>
+                    <li>O código 200 OK indica que a requisição foi bem-sucedida, enquanto o código 404 Not Found indica que o recurso não foi localizado.</li>
+                </ul>
+                <li>Cabeçalhos (Headers): Fornecem metadados sobre o servidor e sobre o conteúdo que está sendo enviado.</li>
+                <ul>
+                    <li>O campo Server identifica o software do servidor web.</li>
+                    <li>O Content-Type especifica o formato do conteúdo no corpo, que é comumente o HTML (ex: text/html).</li>
+                    <li>O Content-Length indica o tamanho do corpo da mensagem.</li>
+                </ul>
+                <li>Corpo (Body):</li>
+                <ul>
+                    <li>É o conteúdo principal da resposta.</li>
+                    <li>Para a Web, este corpo comumente contém o código HTML, que será processado pelo navegador para exibir a página.</li>
+                </ul>
+            </ol>
+        </div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1 - Estrutura Básica HTML</title>
+    <style>
+        body{
+            font-family: opensans, sans-serif;
+        }
+        .img-container{
+            float: right;
+            width: 400px;
+            margin-left: 15px;
+        }
+        img{
+            width: 100%;
+            border-radius: 1%;
+            display: block;
+        }
+        .img-container a{
+            display: block;
+            text-align: right;
+            color: #555;
+            margin-top: 5px;
+            text-decoration: none;
+        }
+        .historia{
+            border-radius: 1%;
+            border: 1px solid black;
+            padding: 15px;
+        }
+        h1,h2{
+            text-align: center;
+        }
+        table, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--Julia Lins feito no dia 09/10/2025-->
+    <div class="historia">
+        <h1>História da Internet e da World Wide Web (Web)</h1>
+        <hr>
+        <h2>História da Internet</h2>
+        <div class="img-container">
+            <img src="imglista/arpanet.png" alt="">
+            <small><a href="https://www.darpa.mil/news/features/arpanet">Fonte</a></small>
+        </div>
+        <p>O surgimento da Internet é um desdobramento direto das tensões geopolíticas da Guerra Fria (1947 a 1991), um período marcado pela disputa por influência e inovação tecnológica entre as superpotências. Os sistemas militares de comunicação da época eram centralizados e altamente vulneráveis, dependendo de redes de telefonia ou sistemas de rádio, e a interrupção de poucos nós poderia cessar o serviço.</p>
+        <p>Em meio a esse cenário, o Departamento de Defesa dos Estados Unidos temia que um potencial ataque pudesse comprometer as linhas de comunicação entre suas diversas bases. Essa preocupação foi o catalisador para a criação de uma rede de comunicação mais robusta e distribuída. O projeto estabeleceu as fundações para o que viria a ser a internet moderna.</p>
+        <ul>
+            <li><strong>1969: </strong>Criação da <mark>ARPANET (Advanced Research Projects Agency Network)</mark>, uma rede experimental e distribuída financiada pelo Ministério de Defesa dos EUA para interconectar laboratórios de pesquisa. Inicialmente, ligou 4 universidades, permitindo o compartilhamento remoto de informações.</li>
+            <li><strong>Início dos anos 80: </strong>A ARPANET muda o protocolo NCP para o novo TCP/IP.</li>
+            <li><strong>1985: </strong>A Internet já estava consolidada como a principal rede de comunicação com alcance global</li>
+            <li><strong>Até 1990: </strong>Os serviços predominantes na rede incluíam E-MAIL, MIRC (bate-papo), gopher (fórum de discussão em rede) e ftp (troca de arquivos).</li>
+            <li><strong>1994: </strong>A Internet é liberada para uso privado e comercial no Brasil.</li>
+        </ul>
+        <hr>
+        <h2>História da Web</h2>
+        <div class="img-container">
+            <img src="imglista/timberners.jpg" alt="">
+            <small><a href="https://interestingengineering.com/culture/how-did-tim-berners-lee-change-the-world-with-the-world-wide-web">Fonte</a></small>
+        </div>
+        <p>Enquanto a Internet se consolidava como a infraestrutura de rede, a <strong>World Wide Web (Web) </strong> foi inventada posteriormente. Em 1989, o físico britânico <strong><mark>Tim Berners-Lee</mark></strong>, enquanto trabalhava no CERN, observou problemas na gestão do conhecimento e da informação. Ele notou que muitas vezes a informação estava registrada, mas era difícil de ser encontrada, circulando por meios ineficientes como fofocas e boletins.</p>
+        <p>Para resolver isso, Berners-Lee propôs um modelo abstrato de uma rede de documentos interligados. Esse sistema utilizava hipertexto para facilitar o compartilhamento e a atualização de informações entre pesquisadores.</p>
+        <ul>
+            <li><strong>1989: </strong>Tim Berners-Lee propõe o conceito da World Wide Web, um sistema de gerenciamento de informações baseado em hipertexto para facilitar o compartilhamento de dados no CERN</li>
+            <li><strong>1990: </strong>Berners-Lee desenvolve o protocolo <strong>HTTP</strong> (Hypertext Transfer Protocol) para a troca de informações entre cliente e servidor. No mesmo ano é criada a linguagem <strong>HTML</strong> (Hypertext Markup Language) para declarar os documentos e o primeiro servidor HTTP e o primeiro cliente HTTP (navegador) são implementados.</li>
+        </ul>
+        <hr>
+        <span><strong>Diferença entre Internet e Web</strong></span>
+        <table>
+            <tr>
+                <td><strong>Característica</strong></td>
+                <td><strong>Internet</strong></td>
+                <td><strong>WEB (World Wide Web)<strong></td>
+            </tr>
+            <tr>
+                <td><strong>O Que É?</strong></td>
+                <td>Uma interconexão de redes de computadores.</td>
+                <td>Um serviço de documentos linkados (hipertexto)</td>
+            </tr>
+            <tr>
+                <td><strong>A Essência</strong></td>
+                <td>A rede física e lógica global.</td>
+                <td>O sistema de informação que utiliza protocolos HTTP e HTML</td>
+            </tr>
+            <tr>
+                <td><strong>Função</strong></td>
+                <td>Possibilita a oferta de diversos serviços (e-mail, ftp, etc.)</td>
+                <td>Permite a navegação por páginas por meio de navegadores.</td>
+            </tr>
+        </table>
+
+    </div>
+    
+</body>
+</html>
