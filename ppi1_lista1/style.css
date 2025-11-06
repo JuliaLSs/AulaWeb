@@ -8,6 +8,8 @@ nav {
   background-color: #502c2c;
   padding: 15px 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
 }
 
 nav ul {
@@ -38,12 +40,13 @@ nav a:hover {
   display: grid;
   grid-template-columns: 1fr 2fr;
   max-width: 1200px;
+  width: 90%;
   margin: 40px auto;
   background: white;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border: 4px solid #502c2c;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #box1 {
