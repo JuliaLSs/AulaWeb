@@ -6,49 +6,64 @@
     <title>Atividade 1 - Estrutura Básica HTML</title>
     <style>
         body{
-            font-family: opensans, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: auto;
+        }
+        h1,h2, h3{
+            text-align: center;
         }
         .img-container{
-            width: 30%;
+            width: 35%;
             float: right;
-            margin-left: 20px;
-            margin-bottom: 10px;
+            margin-left: 0 0  15px 20px;
+            text-align: center;
         }
-        img{
+        .img-container img{
             max-width: 100%;
-            border-radius: 1%;
-            display: block;
+            border-radius: 15px;
         }
         .img-container a{
-            display: block;
-            text-align: right;
+            display: inline-block;
+            text-align: 5px;
             color: #555;
             margin-top: 5px;
             text-decoration: none;
         }
-        .historia{
-            border-radius: 1%;
-            border: 1px solid black;
-            padding: 15px;
-        }
-        h1,h2{
-            text-align: center;
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
         table, td{
             border: 1px solid black;
-            border-collapse: collapse;
         }
         .atividade{
-            border-radius: 1%;
+            border-radius: 20px;
             border: 1px solid black;
-            padding: 15px;
+
+            background-color: #fff;
+            margin: 40px auto;
+            width: 45%;
         }
         
-    </style>
+        </style>
 </head>
 <body>
     <!--Julia Lins feito no dia 09/10/2025-->
-    <div class="historia">
+    <div class="container">
         <h1>História da Internet e da World Wide Web (Web)</h1>
         <hr>
         <h2>História da Internet</h2>
@@ -103,7 +118,6 @@
         </table>
 
     </div>
-    <hr>
     <div class="atividade">
         <h3>Lista atividade</h3>
         <ol>

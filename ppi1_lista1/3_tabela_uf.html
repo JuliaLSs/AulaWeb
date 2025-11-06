@@ -5,15 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 3 – Tabela  Estados.</title>
     <style>
-        table, td{
+        table, td, th{
             border: 1px solid black;
             border-collapse: collapse;
-            padding: 2%;
+            padding: 10px;
+            text-align: left;
+            font-size: 14px;
+        }
+        table{
+            background-color: white;
+            width: 100%;
+        }
+        .container{
+            border: 1px solid black;
+            padding: 15px;
+            border-radius: 20px;
+            background-color: rgb(187, 160, 160);
+            margin: 20px auto;
+            max-width: 900px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
         }
         .container a{
             color: rgb(131, 17, 17);
             text-decoration: none;
+            font-weight: bold;
         }
+        .container a:hover{
+            color: rgb(82, 10, 10);
+            text-decoration: underline;
+        }
+        thead{
+            background-color: rgb(126, 62, 62);
+            color: white
+        }
+        th {
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
     </style>
 </head>
 <body>
@@ -168,7 +197,6 @@
                 <td>MG</td>
                 <td>Belo Horizonte</td>
     </div>
-    <!--Arrumar css-->
     
 </body>
 </html>

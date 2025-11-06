@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+        }
+        .container {
+            display: grid;
+            margin: 40px;
+            grid-template-columns: 1fr 2fr;
+            background: white;
+            border-top-left-radius: 20px; 
+
+            
+        }
+        .box, .exemplo{
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 20px;
+        }
+        .box h1, .box strong, .box h3{
+            color: rgb(155, 0, 0);
+        }
+        .exemplo{
+            grid-column: span 2;
+            background-color: rgb(236, 228, 228);
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">
+            <h1>O que é uma regra CSS?</h1>
+            <p><strong>CSS</strong> é a estrutura fundamental que define como o estilo será aplicado a um ou mais elementos HTML em uma página web. Ela segue uma sintaxe específica para associar um estilo (uma ou mais declarações de propriedade e valor) a elementos selecionados</p>
+        </div>
+        <div class="box" id="box2">
+            <h1>Conceito</h1>
+            <p>Toda regra CSS básica é composta por duas partes principais, o Seletor(Selector) e ao bloco de declaração (Declaration Block)</p>
+            <ol>
+                <li><strong>Seletor(Selector)</strong></li>
+                <ul>
+                    <li>É o alvo da regra, ele que seleciona quais elementos HTML receberão o estilo</li>
+                    <li>Pode ser um nome de tag HTML (<em>EX: p, h1</em>), uma classe ( <em>.destaque</em>), um ID (<em>#cabecalho</em>), ou uma combinação de vários.</li>
+                </ul>
+            </ol>
+            <ol>
+                <li><strong>Bloco de Declaração (Declaration Block):</strong></li>
+                <ul>
+                    <li>Ele contêm uma ou mais declarações de estilo para os elementos selecionados.</li>
+                    <li>Fica sempre entre chaves (<em>{}</em>)</li>
+                </ul>
+            </ol>
+        </div>
+        <div class="exemplo">
+            <pre>
+            &lt;p{
+                &lt;color: red;
+                &lt;font-size:16px &lt;
+            &lt;}>
+            </pre>
+        </div>
+    </div>
+
+    
+</body>
+</html>
