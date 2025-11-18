@@ -16,6 +16,7 @@
     </style>
 </head>
 <body>
+    <button id="limpar">Limpar localStorage</button>
     <div id="formulario">
         <label for="id">id</label>
         <input type="text" name="id" id="id" readonly>
@@ -38,6 +39,10 @@
 
         let button = document.querySelector("#botaoSalvar");
         var listaNomes=[];
+        buttonlimpar.addEventListener("click", ()=>{
+            localStorage.clear();
+            listagem.innerHTML="";
+        })
         if (localStorage.getItem("listaNomes")){
             listaNomes= JSON.parse( localStorage.getItem("listaNomes"));
         } else{
@@ -45,8 +50,9 @@
         }
 
         button.addEventListener("click", ()=>{
+            let maxid=listaNomes.length
             listaNomes.push(
-                {"id":inputid.value,
+                {"id":maxid+1,
                 "nome":inputnome.value,
                 "email":inputemail.value
             })
@@ -87,7 +93,7 @@
         var a= 1 // Define uma variavel a Numerica
         const pi = 3.141516 // Define uma var I Numerica
 
-        let nome = "Julia" // Define uma variavel do tipo string
+        let nome = "batata" // Define uma variavel do tipo string
     </script>
     
 </body>
