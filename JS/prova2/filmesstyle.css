@@ -1,0 +1,175 @@
+
+/*Importar fonte Henny Penny do google (embed code liberado no google fontes)*/
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+
+* {
+    margin: 0; /*remove as margens e espaçamentos padrão do navegador*/
+    padding: 0;
+    box-sizing: border-box; /*faz com que a altura e largura inclua padding e border*/
+}
+
+body {
+    background-color: #1a1a1d;
+    background-image: url(img/harrypotter.jpg);
+    background-size: cover; /*define tamanho da imagem*/
+    background-attachment: fixed; /*fixa o fundo para imagem nao ficar sambando*/
+    color: #d4af37; /*cor do texto padrão*/
+    font-family: 'Cinzel', serif; /*fonte padrão*/ 
+}
+
+.container {
+    width: 90%; /*ocupa 90% da largura da tela*/
+    max-width: 1200px; /*não passa de 1200px*/
+    margin: 0 auto; /*centraliza horizontalmente*/
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /*organiza elementos verticalmente*/
+    align-items: center; /*centraliza horizontalmente os itens dentro*/
+}
+
+.header-tematico h1 {
+    font-family: 'Henny Penny', cursive;
+    font-size: 60px;
+    color: #ffcc00; 
+    text-align: center; /*centralioza o texto*/
+    text-shadow: 0 0 10px #ffcc00, 2px 2px 0px #3e2723; /*sombra e brilho no texto*/
+    letter-spacing: 2px; /*espaço entre letras*/
+}
+
+#busca {
+    width: 100%;
+    max-width: 600px; /*limitar o tamanho*/
+    display: flex; 
+    margin-bottom: 40px;
+    justify-content: center; /*centraliza os elementos horizontalmente*/
+}
+
+#titulo {
+    padding: 15px; 
+    font-size: 20px;
+    border-radius: 8px;
+    border: 2px solid #bd7e21; 
+    background-color: #ece5d5; 
+    font-family: 'Cinzel', serif;
+    color: #2c1810;
+}
+
+/*estilo do titulo quando está selecionado*/
+#titulo:focus {
+    outline: none;
+    box-shadow: 0 0 15px #f1b100;
+}
+
+
+#buscar {
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 8px;
+    background-color: #740001;
+    color: #ffcc00;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    border: 2px solid #d4af37;
+}
+
+/*muda o estilo quando mouse passa por cima*/
+#buscar:hover {
+    background-color: #ae0001;
+    box-shadow: 0 0 15px #d4af37; 
+}
+
+
+#resultado {
+    display: flex; /*Organiza cards em linha*/
+    flex-wrap: wrap; /*card quebrando a proxima linha caso necessario*/
+    justify-content: center;  /*centraliza os cards*/
+    gap: 30px; /*espaço entre os cards*/
+    width: 100%; /*ocupa largura total do container*/
+}
+
+
+.filme {
+
+    background-color: #f0e2c6; 
+    color: #2c1810; 
+    width: 300px; /*fixa a largura*/
+    border-radius: 10px;
+    padding: 15px;
+    border: 4px double #4a3b2a; /*borda dupla estilizada*/
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /*sombra*/
+    display: flex;
+    flex-direction: column; /*organiza verticalmente*/
+    align-items: center; /*centraliza horizontalmente*/
+    transition: transform 0.3s; /*suaviza a transformação do hover*/
+}
+
+.filme:hover {
+    transform: translateY(-10px); /*move para cima*/
+    box-shadow: 0 0 20px #d4af37; /*muda a sombra*/
+}
+
+.filme img {
+    width: 100%; /*imagem ocupar toda a largura do card*/
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 2px solid #2c1810;
+}
+
+.filme h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #740001;
+    padding-bottom: 5px;
+    width: 100%; /*preenche horizontalmente*/
+}
+
+.info {
+    font-size: 15px;
+    margin-bottom: 10px; /*separa da */
+    width: 100%;
+    text-align: left; /*alinham conteúdo a esquerda*/
+}
+
+.info p {
+    margin: 5px 0; /*espaço entre linhas de informação*/
+}
+
+
+#nota {
+    font-weight: bold; /*nota recebe destaque*/
+    color: #b30000;
+}
+
+.sinopse {
+    font-size: 14px;
+    font-style: italic;
+    background: rgba(0,0,0,0.05);
+    padding: 5px;
+}
+
+.elenco {
+    font-size: 13PX;
+    text-align: center;
+    color: #555;
+}
+
+.menu{
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(41, 38, 77);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    transition: transform 0.3s;
+    font-family: 'Press Start 2P';
+}
+
+.menu:hover{
+    transform: translateY(-10px);
+    background-color: rgb(56, 52, 99);
+}

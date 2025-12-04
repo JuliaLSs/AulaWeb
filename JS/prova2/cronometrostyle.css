@@ -1,0 +1,108 @@
+body{
+    display: flex;
+    align-items: center; /*alinha verticalmente no centro*/
+    justify-content: center; /*alinha horizontalmente no centro*/
+    height: 100vh; /*altura total da tela*/
+    margin: 0; /*remove margens padrão do navegador*/
+    background-image: url(img/estrela.jpg);
+    background-size: cover; /*background-sizer: cover para a imagem cobrir tudo sem deformar*/
+}
+
+.caixaPrincipal{
+    display: grid; /* transforma em uma grid*/
+    grid-template-columns: 1fr 1fr; /*cria duas colunas iguais */
+    width: 700px; /*Tamanho fixo da caixa*/
+    height: 600px; 
+    border: 1px solid black; 
+    color: white;
+    background-color: rgb(41, 50, 75);
+    padding: 20px; /*espaço interno entre borda e o conteudo*/
+    border-radius: 20px;
+    position: relative; /*usado para posicionar o elemento da imagem da sininho,*/
+}
+.sininho{
+    position: absolute; /*posicionamento fora do fluxo normal que é relativo a caixa principal*/
+    top: -150px; /*move a imagem para fora da caixa*/
+    right: 0px; 
+    width: 200px; /*largura fixa*/
+    height: auto; /*mantém a proporção da imagem ao ajustar altura*/
+
+}
+
+.box1{
+    display: flex; 
+    flex-direction: column; /*empilha verticalmente */
+    justify-content: center; /* centraliza os itens verticalmeten*/
+    align-items: center; /*centraliza os itens horizontalmente*/
+
+}
+
+.tempo{
+    margin-bottom: 20px; /*separa do conjunto de botões*/
+    font-size: 25px; /*aumenta o tamanho do texto*/
+}
+
+.botoes button{
+    padding: 10px; /*espaço interno dos botões*/
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.box2{
+    background-color: rgb(72, 90, 124); 
+    display: flex;
+    flex-direction: column; /*empilha a lista e */
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden; /*esconde qualquer conteudo que passa dos limites*/
+}
+
+#voltas{
+    flex: 1; /* faz a lista ocupar todo o espaço vertical*/
+    overflow-y: scroll; /*permite a rolagem vertical*/
+    margin: 0; /*remove as margens default da lista ol*/
+    padding-right: 10px;
+}
+
+#limpar{
+    margin-top: 10px; /*separa o botão limpar da lista*/
+    align-self: center; /*centraliza o botão horizontalmente*/
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/*Aplica a cor quando o mouse passa por cima */
+.botoes button:hover{
+    background-color: rgb(137, 146, 177);
+    color: rgb(255, 255, 255);
+}
+
+#limpar:hover{
+    background-color: rgb(137, 146, 177);
+    color: rgb(255, 255, 255);
+}
+
+/*aplica quando o botão está seleccionado*/
+.botoes button:focus{
+    outline: none; /*remove a borda de foco padrão*/
+    box-shadow: 0 0 15px #22cf70; /*adiciona um brilho ao redor*/
+}
+
+.menu{
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(41, 38, 77);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    transition: transform 0.3s;
+    font-family: 'Press Start 2P';
+}
+
+.menu:hover{
+    transform: translateY(-10px);
+    background-color: rgb(56, 52, 99);
+}

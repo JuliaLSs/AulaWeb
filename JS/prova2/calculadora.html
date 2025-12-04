@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <!-- Conecta o arquivo CSS-->
+    <link rel="stylesheet" href="calculadorastyle.css">
+</head>
+<body>
+    <div class="calculadora"> <!-- Box principal da calculadora-->
+        <div class="resultado"></div> <!-- Box para o visor dos resultados-->
+        <div class="botoes"> <!-- Box que contem os botões para melhor organização-->
+            <!--Operações -->
+            <button id="soma" class="oper">.</button>
+            <button id="subtracao" class="oper">.</button>
+            <button id="multiplicacao" class="oper">.</button>
+            <button id="divisao" class="oper">.</button>
+
+            <!--Numeros divididos em como serão formatados depois no css -->
+            
+            <button id="num7" class="calc">7</button>
+            <button id="num8" class="calc">8</button>
+            <button id="num9" class="calc">9</button>
+            
+            <button id="num4" class="calc">4</button>
+            <button id="num5" class="calc">5</button>
+            <button id="num6" class="calc">6</button>
+
+            <button id="num1" class="calc">1</button>
+            <button id="num2" class="calc">2</button>
+            <button id="num3" class="calc">3</button>
+    
+            <button id="num0" class="calc">0</button>
+            <button id="ponto" class="calc">.</button>
+            <button id="apagar" class="oper">C</button>
+            <button id="igual" class="oper"></button>
+            
+        </div>
+    </div>
+
+    <a href="index.html" class="menu">MENU</a> <!--Botão para voltar para o menu-->
+
+    <script>
+
+        /* querySelector para selecionar os elementos do html (#id .classe)*/
+        let num0 =document.querySelector("#num0")
+        let num1 =document.querySelector("#num1")
+        let num2 =document.querySelector("#num2")
+        let num3 =document.querySelector("#num3")
+        let num4 =document.querySelector("#num4")
+        let num5 =document.querySelector("#num5")
+        let num6 =document.querySelector("#num6")
+        let num7 =document.querySelector("#num7")
+        let num8 =document.querySelector("#num8")
+        let num9 =document.querySelector("#num9")
+        let soma =document.querySelector("#soma")
+        let divisao =document.querySelector("#divisao")
+        let multiplicacao =document.querySelector("#multiplicacao")
+        let subtracao =document.querySelector("#subtracao")
+        let ponto =document.querySelector("#ponto")
+        let apagar =document.querySelector("#apagar")
+        let igual =document.querySelector("#igual")
+        let resultado =document.querySelector(".resultado")
+
+        /*addEventListener("click), evento que executa ao clicar no botão, resultado.innerHTML+= adiciona o contéudo ao visor, '0' o numero que é colocado no visor
+        ()=>{ função*/
+        num0.addEventListener("click", ()=>{
+            resultado.innerHTML+=`0`
+        })
+        
+        num1.addEventListener("click", ()=>{
+            resultado.innerHTML+=`1`
+        })
+        
+        num2.addEventListener("click", ()=>{
+            resultado.innerHTML+=`2`
+        })
+        
+        num3.addEventListener("click", ()=>{
+            resultado.innerHTML+=`3`
+        })
+        
+        num4.addEventListener("click", ()=>{
+            resultado.innerHTML+=`4`
+        })
+        
+        num5.addEventListener("click", ()=>{
+            resultado.innerHTML+=`5`
+        })
+        
+        num6.addEventListener("click", ()=>{
+            resultado.innerHTML+=`6`
+        })
+        
+        num7.addEventListener("click", ()=>{
+            resultado.innerHTML+=`7`
+        })
+        
+        num8.addEventListener("click", ()=>{
+            resultado.innerHTML+=`8`
+        })
+
+        num9.addEventListener("click", ()=>{
+            resultado.innerHTML+=`9`
+        })
+        
+        /*Adiciona os símbolos no visor, funcionando como os numeros*/
+        soma.addEventListener("click", ()=>{
+            resultado.innerHTML+=`+`
+        })
+        
+        divisao.addEventListener("click", ()=>{
+            resultado.innerHTML+=`/`
+        })
+        
+        multiplicacao.addEventListener("click", ()=>{
+            resultado.innerHTML+=`*`
+        })
+
+        subtracao.addEventListener("click", ()=>{
+            resultado.innerHTML+=`-`
+        })
+
+        ponto.addEventListener("click", ()=>{
+            resultado.innerHTML+=`.`
+        })
+
+        /*Define o visor como vazio*/
+        apagar.addEventListener("click", ()=>{
+            resultado.innerHTML=``
+        })
+
+        /*eval() interpreta o texto como conta e resolve, resultado.textContent pega o texto que está no visor, ${...} serve para executar o código dentro das chaves e colocar o resultado dentro*/
+        igual.addEventListener("click", ()=>{
+            resultado.innerHTML=`${eval(resultado.textContent)}`
+        })
+        
+    </script>
+    
+</body>
+</html>

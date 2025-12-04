@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca Filmes OMDB</title>
+    <link rel="stylesheet" href="filmesstyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-tematico">
+            <h1>Busca de Filmes</h1>
+        </div>
+        <div class="box" id="busca">
+            <!--placeholder, texto que some ao digitar-->
+            <input type="text" id="titulo" placeholder="Digite o nome do Filme"> 
+            <!--botão para iniciar a busca-->
+            <button id="buscar">Buscar</button>
+        </div>
+        <div class="box" id="resultado">
+            <!--caixa onde os resultados são colocados pelo java-->
+
+        </div>
+    </div>
+    <a href="index.html" class="menu">MENU</a> <!--Botão para voltar para o menu-->
+
+    <script>
+        let API_KEY = "a4a4d4f3"
+        /*seleciona o input digitado no titulo e guarda no inputFilme*/
+        let inputFilme = document.querySelector("#titulo");
+        /*seleciona o botao buscar*/
+        let button = document.querySelector("#buscar");
+        /*selefciona onde a div onde os filmes serão mostrados*/
+        let divResultado = document.querySelector("#resultado");
+
+        /*adiciona um evento que executa a função quando clica no botão buscar*/
+        button.addEventListener("click", () => {
+            divResultado.innerHTML = ``;
+            /*O fetch busca requisções em algum lugar, nesse caso o link omdbapi, com um titulo e uma api key, o link vai buscar o titulo guardado e com a apikey vai retornar, assim que retornar vai fazer uma função que vai pegar a resposta com o parametro (parte then((response)=>) e vai retornar o json da resposta (formato de dados para transmitir e armazenar dados, usado em APIs para enviar e receber dados*/
+            fetch(`http://www.omdbapi.com/?s=${inputFilme.value}&apikey=${API_KEY}`).then((response) => {
+                return response.json();
+            }).then((resultado) => {
+            /*Ira pegar o json com .then, passar como o parametro data*/
+                console.log(resultado);
+                /*console log para mostrar que está tudo certo*/
+                resultado.Search.forEach((f) => {/*forEach no resultado para percorrer todos os filmes*/
+                    /*Em cada elemento da lista faz um novo fetch buscando o id do filme para acessar as informações dele*/
+                    fetch(`http://www.omdbapi.com/?i=${f.imdbID}&apikey=${API_KEY}`)
+                        .then((response) => response.json()) /*Pega a resposta novamente e transforma em json*/
+                        .then((filme) => { /*pega a resposta do json e transformar em estrutura htmç*/
+                            let divfilme =
+                                `<div class="filme"> 
+                                    <img src="${filme.Poster}" alt="Pôster do filme">
+                                    <h2>${filme.Title}</h2> /*Acessando os parametros da própria API*/
+                                    <div class="info">
+                                        <p id="ano">Ano: ${filme.Year}</p>
+                                        <p id="genero">Gênero: ${filme.Genre}</p>
+                                        <p id="nota">IMDB Rating ⭐${filme.imdbRating}</p>
+                                        <p id="sinopse">Sinopse</p>
+                                    </div>
+                                    <div class="sinopse">
+                                        <p>${filme.Plot}</p>
+                                    </div>
+                                    <p class="elenco">Elenco: </p>
+                                    <p class="elenco">${filme.Actors}</p>
+                                </div>`;
+                            divResultado.innerHTML += divfilme;
+                        });
+                });
+            })
+        })
+    </script>
+</body>
+
+</html>

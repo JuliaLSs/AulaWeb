@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometro</title>
+    <link rel="stylesheet" href="cronometrostyle.css">
+</head>
+<body>
+    <div class="caixaPrincipal"> <!--Caixa para agrupar todo cronometro-->
+        <img src="img/sininho.png" class="sininho"><!--Imagem da sininho que fica apoiada-->
+        <div class="box1"> <!--Caixa do lado esquerdo-->
+            <div class="tempo"> <!--Apenas para organizar-->
+                <h1 id="tempo">00:00:00:00</h1>
+            </div>
+            <div class="botoes"> <!--Para os botoes-->
+                <button id="zerar">Zerar</button>
+                <button id="iniciar">Iniciar</button>
+                <button id="parar">Parar</button>
+            </div>
+        </div>
+        <div class="box2"> <!--Caixa do lado direito-->
+            <ol id="voltas"></ol> <!--Lista ordenada vazia para o javascript inserir li-->
+            <button id="limpar">Limpar</button> <!--Botão que limpa a lista de voltas-->
+        </div>
+    </div>
+
+        <a href="index.html" class="menu">MENU</a> <!--Botão para voltar para o menu-->
+
+    <script>
+        /* querySelector para selecionar os elementos do html (#id .classe)*/
+        let zerar =document.querySelector("#zerar")
+        let iniciar =document.querySelector("#iniciar")
+        let parar =document.querySelector("#parar")
+        let voltas =document.querySelector("#voltas")
+        let tempo =document.querySelector("#tempo")
+        let limpar =document.querySelector("#limpar")
+        /*declara 4 variaveis, horas, minutos, segundos, e milissegundos*/
+        let h =0, m =0, s =0, d = 0 
+
+        /*Variavel para guardar o retornado por setInterval usada para iniciar/parar o loop do timer com clearIntervqal*/
+        let intervalo
+
+        /*função que atualiza o tempo*/
+        function iniciartimer(){
+            /*adiciona d em 1*/
+            d++
+            if (d == 100){
+                d = 0
+                s++
+                /*quando d atinge 100, reseta para 0 e soma 1 segundo*/
+            }
+            if (s == 60){
+                s = 0
+                m++
+                /*quando s chega a 60, reseta e soma 1 minuto*/
+            }
+            if (m == 60){
+                m = 0
+                h++
+                /*quando minutos chegam a 60, reseta e soma 1 hora*/
+            }
+            /*o tempo.innerHTML atualiza o texto do visor com o template string, toString.padStart(2, `0`) garante sempre 2 dígitos*/
+            tempo.innerHTML=`${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}:${d.toString().padStart(2,'0')}`
+        }
+        /*adiciona evento click no botao iniciar*/
+        iniciar.addEventListener("click", ()=>{
+            /*verifica se ja existe um intervalo em execução, serve para pausar e voltar o cronometro*/
+            if(intervalo){
+                /*se possui um intervalo, para o timer, intervalo null marca que nao está rodando e muda o conteudo do iniciar para continuar, return sai da fun~ção*/
+                clearInterval(intervalo);
+                intervalo = null;
+                iniciar.textContent = "Continuar"; 
+                return; 
+            }
+             /*Se não tem intervalo, inicia repetição chamada iniciartimer a cada 10ms guarda o contéudo na variavel intervalo*/
+            intervalo =setInterval(iniciartimer, 10)
+
+        })
+        /*função para zerar o intervalo*/
+        zerar.addEventListener("click", ()=>{
+            /*para qualquer intervalo ativo com clearInterval*/
+            clearInterval(intervalo) 
+            m = 0
+            s = 0 
+            h = 0
+            d = 0
+            /*reseta todas variaveis para -*/
+            tempo.innerHTML=`00:00:00:00` /*atualiza o visor*/
+            iniciar.textContent = "iniciar"; /*restaura o texto do botão iniciar para iniciar*/
+        })
+        /*botão para registrar voltas*/
+        parar.addEventListener("click", ()=>{
+            /*adiciona um item na lista ordenada com valor atual do tempo*/
+            voltas.innerHTML+=`<li>${tempo.textContent}</li>`
+        })
+        /*limpa toda a lista de voltas definindo o innerHTML da lista para vazio*/
+        limpar.addEventListener("click", ()=>{
+            voltas.innerHTML=``
+        })
+
+    </script>
+
+</body>
+</html>

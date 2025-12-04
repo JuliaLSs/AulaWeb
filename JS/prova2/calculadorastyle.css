@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /*fonte importada do google fonts para combinar com o meu*/
+body{
+            display: flex;
+            align-items: center; /*alinha verticalmente no centro*/
+            justify-content: center; /*alinha horizontalmente no centro*/
+            height: 100vh; /*altura total da tela*/
+            margin: 0; /*remove margens padrão do navegador*/
+            background-color: #6b3354;
+}
+.calculadora{
+            width: 300px; /*largura fixa da calculadora*/
+            border: 3px solid rgb(255, 17, 156); 
+            border-radius: 2%;
+            overflow: hidden; /*corta o que passar dos limites*/
+            background-image: url(img/glitter.jpg);
+            background-size: cover;
+            box-shadow: 0px 0px 15px rgb(87, 16, 66);
+}
+
+.resultado{
+    height: 100px;
+    display: flex;
+    flex-direction: column; /*elementos dentro ficam em coluna*/
+    justify-content: center;  /* centraliza verticalmente*/
+    align-items: flex-end;  /*alinha o texto à direita*/
+    padding-right: 10px; /*espaço interno à direita*/
+    font-size: 50px; 
+    margin: 20px;
+    border-radius: 3px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(255, 198, 246);
+    color: rgb(219, 0, 121);
+}
+
+/*Customização dos botões de operação, background-sizer: cover para a imagem cobrir tudo sem deformar*/
+
+#soma{
+    background-image: url(img/soma.jpg);
+    background-size: cover;
+}
+
+#subtracao{
+    background-image: url(img/menos.jpg);
+    background-size: cover;
+}
+
+#multiplicacao{
+    background-image: url(img/multiplicacao.jpg);
+    background-size: cover;
+}
+
+#divisao{
+    background-image: url(img/divisao.jpg);
+    background-size: cover;
+}
+
+#igual{
+    background-image: url(img/igual.jpg);
+    background-size: cover;
+}
+
+.botoes button{
+    background-color: rgb(255, 122, 184);
+    margin: 3px;
+    border-radius: 6px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    padding: 20px; /*Espaço interno (deixando os botões maior)*/
+
+}
+
+/*hover muda a cor quando o mouse passa por cima*/
+.botoes button:hover{
+    background-color: rgb(255, 169, 209);
+}
+
+.botoes{
+    margin:20px; /*Espaço entre os botões*/
+}
+.botoes{
+    display: grid; /*transforma em uma grid*/
+    grid-template-columns: repeat(4, 1fr); /*4 colunas do mesmo tamanho*/
+    grid-template-areas: 
+    /*define onde cada botão*/
+    "soma subtracao multiplicacao divisao"
+    "num7 num8 num9 igual"
+    "num4 num5 num6 igual"
+    "num1 num2 num3 igual"
+    "num0 ponto apagar igual";
+}
+
+
+#soma {grid-area: soma;}
+#subtracao {grid-area: subtracao;}
+#multiplicacao {grid-area: multiplicacao;}
+#divisao {grid-area: divisao;}
+
+#num7{grid-area: num7;}
+#num8 {grid-area: num8;}
+#num9 {grid-area: num9;}
+
+#num4 {grid-area: num4;}
+#num5 {grid-area: num5;}
+#num6 {grid-area: num6;}
+
+#num1 {grid-area: num1;}
+#num2 {grid-area: num2;}
+#num3 {grid-area: num3;}
+
+#num0 {grid-area: num0;}
+#ponto {grid-area: ponto;}
+#apagar {grid-area: apagar;}
+
+#igual{grid-area: igual;}
+
+.menu{
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(41, 38, 77);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    transition: transform 0.3s;
+    font-family: 'Press Start 2P';
+}
+
+.menu:hover{
+    transform: translateY(-10px);
+    background-color: rgb(56, 52, 99);
+}
